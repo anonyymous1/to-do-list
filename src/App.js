@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import ListItem from './components/ListItem'
 
-function App() {
+function App(props) {
+  
+  let list = ["Read up on React","Learn React","Style React","$$$"]
+  let listItems = list.map((listItem, idx) =>{
+    return <ListItem doThis={listItem} key={idx}/>
+  
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>My List</header>
+      <div>
+        <ul>
+          <ListItem doThis="Make a List" />
+          <ListItem doThis="Make 1st Item" />
+          <ListItem doThis="Make 2nd Item" />
+          <ListItem doThis="Make 3rd Item" />
+          {listItems}
+        </ul>
+      </div>
     </div>
   );
 }
