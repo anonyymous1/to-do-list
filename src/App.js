@@ -1,25 +1,11 @@
 import './App.css';
-import ListItem from './components/ListItem'
+import MyList from './MyList';
 
 function App(props) {
-  
-  let list = ["Read up on React","Learn React","Style React","$$$"]
-  let listItems = list.map((listItem, idx) =>{
-    return <ListItem doThis={listItem} key={idx}/>
-  
-  })
+  console.log(props.sally);
   return (
     <div className="App">
-      <header>My List</header>
-      <div>
-        <ul>
-          <ListItem doThis="Make a List" />
-          <ListItem doThis="Make 1st Item" />
-          <ListItem doThis="Make 2nd Item" />
-          <ListItem doThis="Make 3rd Item" />
-          {listItems}
-        </ul>
-      </div>
+      <MyList jeremyList={props.sally} />
     </div>
   );
 }
